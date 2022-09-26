@@ -6,6 +6,7 @@
 package jktv21task4gerstman;
 
 
+import java.util.Arrays;
 import java.util.Random;
 /**
  *
@@ -20,8 +21,15 @@ public class JKTV21Task4Gerstman {
         // TODO code application logic here
         Random rnd = new Random();
         int[] arr = new int[100];
+        int sum = 0;
         for(int i = 0; i < arr.length; i++){
-            arr[i] = rnd.nextInt(101);
+            arr[i] = rnd.nextInt(50) * 2 + 1;
+            sum = sum + arr[i];
+        }
+        
+        Arrays.sort(arr);
+        
+        for(int i = 0; i < arr.length; i++){
             if(i % 10 == 0){
                 System.out.printf("\n%d\t", arr[i]);
             }
@@ -29,6 +37,7 @@ public class JKTV21Task4Gerstman {
                 System.out.printf("%d\t", arr[i]);
             }
         }
+        
+        System.out.println("\nAverage: " + sum / arr.length);
     }
-    
 }
